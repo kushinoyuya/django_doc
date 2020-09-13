@@ -32,3 +32,14 @@ $ cd news
 ※：モデルを記述後\
 $ python3 manage.py makemigrations\
 $ python3 manage.py migrate
+
+### ORM操作（対話型シェルでモデル機能を確かめる）
+$ python3 manage.py shell\
+from news.models import Article, Reporter\
+Reporter.objects.all()\
+r = Reporter(full_name='John Smith')\
+r.save()\
+r.id\
+Reporter.objects.all()\
+<QuerySet [<Reporter: John Smith>]>
+a = Article(pub_date=date.today(), headline='Django is cool', content='Year.', reporter=r)
