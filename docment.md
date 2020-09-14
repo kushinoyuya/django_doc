@@ -43,3 +43,7 @@ r.id\
 Reporter.objects.all()\
 <QuerySet [<Reporter: John Smith>]>
 a = Article(pub_date=date.today(), headline='Django is cool', content='Year.', reporter=r)
+
+### ユーザ作成
+$ python3 manage.py createsuperuser
+admin@example.com
